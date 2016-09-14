@@ -1,4 +1,4 @@
-{% from "groups/map.jinja" import groups with context -%}
+{% set groups = pillar.get('groups', {}) -%}
 
 {% for group, info in groups.iteritems() -%}
 groups_{{ group }}:
