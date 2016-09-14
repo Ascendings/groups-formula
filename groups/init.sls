@@ -1,6 +1,6 @@
 {% from "groups/map.jinja" import groups with context -%}
 
-{% for group, info in groups_def.iteritems() -%}
+{% for group, info in groups.iteritems() -%}
 groups_{{ group }}:
   group.present:
     - name: {{ group }}
