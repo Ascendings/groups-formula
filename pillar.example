@@ -1,0 +1,10 @@
+groups:
+  group_a:
+    gid: 1001
+
+  group_b:
+    gid: 1002
+    members:
+      - alex
+      - sally
+      - billy
