@@ -6,5 +6,11 @@ groups_{{ group }}:
     - name: {{ group }}
     {% for key, value in info.iteritems() -%}
     - {{ key }}: {{ value }}
+      {% if key == 'members' %}
+    - require:
+        {% for user in value %}
+      - user: {{ user }}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
 {% endfor -%}
