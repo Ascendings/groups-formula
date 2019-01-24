@@ -1,10 +1,10 @@
 {% set groups = pillar.get('groups', {}) -%}
 
-{% for group, info in groups.iteritems() -%}
+{% for group, info in groups.items() -%}
 groups_{{ group }}:
   group.present:
     - name: {{ group }}
-    {% for key, value in info.iteritems() -%}
+    {% for key, value in info.items() -%}
     - {{ key }}: {{ value }}
       {% if key == 'members' %}
     - require:
